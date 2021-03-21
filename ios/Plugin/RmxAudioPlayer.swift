@@ -752,7 +752,7 @@ final class RmxAudioPlayer: NSObject {
 
             if loop && !avQueuePlayer.queuedAudioTracks.isEmpty {
                 avQueuePlayer.setCurrentIndex(0)
-                // not playing here
+                avQueuePlayer.play()
             } else {
                 onStatus(.rmxstatus_STOPPED, trackId: "INVALID", param: nil)
             }
