@@ -3,6 +3,8 @@ Will probably be published as @dwbn/capacitor-playlist
 
 A capacitor plugin for Android, iOS and Web with native support for audio playlists, background support, and lock screen controls
 
+> This repo has some modify for personal use.
+
 
 ## 0. Index
 
