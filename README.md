@@ -36,7 +36,7 @@ cordova, and here we wanna give back to the community our outcome, any help is a
 As with most capacitor plugins...
 
 ```
-npm i capacitor-plugin-playlist
+npm i git+https://github.com/asika32764/capacitor-plugin-playlist.git
 npx cap sync
 ```
 
