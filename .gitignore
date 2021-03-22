@@ -3,7 +3,7 @@
 # And the CLI then renames it
 
 # node files
-dist/
+#dist/
 node_modules/
 
 # iOS files
@@ -65,3 +65,4 @@ captures/
 
 # local lock files
 package-lock.json
+yarn.lock
