@@ -29,6 +29,11 @@ final class RmxAudioPlayer: NSObject {
 
     override init() {
         super.init()
+        
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = [
+            MPMediaItemPropertyTitle: "Music"
+        ]
+
 
         activateAudioSession()
         observeLifeCycle()
@@ -468,6 +473,12 @@ final class RmxAudioPlayer: NSObject {
     }
 
     @objc func playerItemDidReachEnd(_ notification: Notification?) {
+        if (loop) {
+            avQueuePlayer.setCurrentIndex(0)
+            avQueuePlayer.play()
+            return
+        }
+        
         if let object = notification?.object {
             print("Player item reached end: \(object)")
         }
