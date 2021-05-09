@@ -86,15 +86,19 @@ public class PlaylistPlugin: CAPPlugin, StatusUpdater {
         call.resolve();
     }
     @objc func playTrackById(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+        let value = call.getString("id") ?? ""
+        let position = call.getFloat("position") ?? 0.0
+        audioPlayerImpl.playTrack(value, positionTime: position);
         call.resolve();
     }
     @objc func selectTrackByIndex(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+        let value = call.getInt("value") ?? 0
+        audioPlayerImpl.selectTrack(index: value)
         call.resolve();
     }
     @objc func selectTrackById(_ call: CAPPluginCall) {
         let value = call.getString("value") ?? ""
+        audioPlayerImpl.selectTrack(trackId: value);
         call.resolve();
     }
     @objc func setPlaybackVolume(_ call: CAPPluginCall) {
