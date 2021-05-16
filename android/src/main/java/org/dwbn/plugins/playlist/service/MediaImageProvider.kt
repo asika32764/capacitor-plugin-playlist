@@ -51,7 +51,8 @@ class MediaImageProvider(context: Context, val onImageUpdated: OnImageUpdatedLis
         get() {
             // return R.mipmap.icon; // this comes from cordova itself.
             if (notificationIconId <= 0) {
-                notificationIconId = fakeR.getId("drawable", options?.icon)
+                // notificationIconId = fakeR.getId("drawable", options?.icon)
+                notificationIconId = R.drawable.playlistcore_notification_play
             }
             return notificationIconId
         }
